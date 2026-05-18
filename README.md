@@ -15,15 +15,18 @@ The apex (`tacalakes.co.nz`) can't CNAME to Pages directly (CNAME isn't allowed 
 
 ## DNS records the domain admin (BTG) needs
 
+Four A records on the apex, pointing at GitHub Pages:
+
 | Type | Host | Value |
 |---|---|---|
 | A | `@` | `185.199.108.153` |
 | A | `@` | `185.199.109.153` |
 | A | `@` | `185.199.110.153` |
 | A | `@` | `185.199.111.153` |
-| TXT | `_github-pages-challenge-plainblackcreative` | `<value from GitHub Pages settings — see Settings → Pages → Verify your custom domain>` |
 
 GitHub Pages auto-issues a Let's Encrypt cert once DNS resolves; no SSL setup required.
+
+Optionally, GitHub also offers an org-level verified-domain TXT challenge (protects against subdomain-takeover scenarios where DNS gets mis-pointed at GH and someone else claims the domain on Pages). Set up via `github.com/organizations/plainblackcreative/settings/pages` → Add domain. Not required for the site to serve.
 
 ## Editing
 
