@@ -1,0 +1,12 @@
+# GitHub Pages (legacy Jekyll) build config.
+#
+# Added 2026-08-29. Without this, README.md was rendered and served publicly at
+# https://tacalakes.co.nz/README.md — GitHub Pages publishes the repo root the
+# same way Cloudflare Pages does. Nothing secret was in it, but internal repo
+# docs do not belong on a client domain.
+#
+# index.html and 404.html carry no front matter, so Jekyll copies them through
+# untouched. This file only removes README.md from the build output.
+exclude:
+  - README.md
+  - .gitignore
